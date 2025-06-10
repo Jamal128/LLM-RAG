@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente de Terra</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        /* Variables CSS para colores */
+        :root {
+            --bg-dark: #202123; /* Fondo principal oscuro */
+            --chat-bg: #343541; /* Fondo del área de chat y input */
+            --input-bg: #40414F; /* Fondo del campo de texto */
+            --text-light: #ececf1; /* Color de texto claro */
+            --text-muted: #8e8ea0; /* Color de texto secundario/gris */
+            --user-message-bg: #343541; /* Fondo del mensaje del usuario */
+            --assistant-message-bg: #40414F; /* Fondo del mensaje del asistente */
+            --primary-gradient-start: #4a148c; /* Morado oscuro */
+            --primary-gradient-end: #880e4f;   /* Rosa oscuro */
+            --accent-color: #00bcd4; /* Turquesa/Cian para acentos */
+            --border-color: rgba(255, 255, 255, 0.1); /* Borde sutil */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif; /* Fuente moderna */
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ocupa al menos el 100% de la altura de la ventana */
+            overflow: hidden; /* Oculta barras de scroll del body */
+            position: relative;
+        }
+
+        /* Degradado de fondo sutil y animado */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460, #e94560);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 800px; /* Ancho máximo similar a ChatGPT */
+            height: 90vh; /* Altura que ocupa la mayoría de la pantalla */
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            background-color: var(--chat-bg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        header img {
+            height: 30px; /* Pequeño icono para el header */
+            width: 30px;
+            border-radius: 50%;
+        }
+
+        .chat-history {
+            flex-grow: 1; /* Ocupa el espacio restante */
+            padding: 20px;
+            overflow-y: auto; /* Hace que el historial sea scrollable */
+            scroll-behavior: smooth; /* Desplazamiento suave */
+            -webkit-overflow-scrolling: touch; /* Mejora el scroll en iOS */
+        }
+
+        /* Estilo para los mensajes de chat */
+        .message-row {
+            display: flex;
+            padding: 10px 0;
+            align-items: flex-start;
+            gap: 15px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.05); /* Separador sutil */
+        }
+
+        .message-row:last-child {
+            border-bottom: none; /* No hay borde en el último mensaje */
+        }
+
+        .message-row img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0; /* Evita que la imagen se encoja */
+        }
+
+        .message-content {
+            flex-grow: 1; /* Ocupa el espacio restante */
+            padding: 8px 12px;
+            border-radius: 8px;
+            word-wrap: break-word; /* Rompe palabras largas */
+            max-width: calc(100% - 45px); /* Ajusta al ancho del contenedor - avatar */
+            line-height: 1.5;
+        }
+
+        /* Mensajes del usuario */
+        .user .message-content {
+            background-color: var(--user-message-bg);
+            color: var(--text-light);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Mensajes del asistente */
+        .assistant .message-content {
+            background-color: var(--assistant-message-bg);
+            color: var(--text-light);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilos para el Markdown dentro del mensaje (Marked.js genera HTML) */
+        .message-content strong {
+            color: var(--accent-color); /* Color para negritas */
+        }
+        .message-content ul, .message-content ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        .message-content li {
+            margin-bottom: 5px;
+        }
+        .message-content p {
+            margin: 5px 0;
+        }
+        .message-content pre {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            padding: 10px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-all;
+            font-size: 0.9em;
+        }
+        .message-content code {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+        }
+        .message-content h1, .message-content h2, .message-content h3, .message-content h4, .message-content h5, .message-content h6 {
+            color: var(--accent-color);
+            margin-top: 15px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        .chat-input-area {
+            padding: 15px 20px;
+            background-color: var(--chat-bg);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        textarea {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px; /* Borde más redondeado */
+            background-color: var(--input-bg);
+            color: var(--text-light);
+            font-size: 1em;
+            resize: none; /* No permitir redimensionar por el usuario */
+            min-height: 20px; /* Altura mínima */
+            max-height: 150px; /* Altura máxima para evitar que sea muy grande */
+            overflow-y: auto; /* Scroll si el contenido excede la altura */
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px var(--accent-color);
+        }
+
+        button {
+            background: linear-gradient(to right, #00bcd4, #00e5ff); /* Degradado en el botón */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 20px; /* Borde más redondeado */
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            flex-shrink: 0; /* Evita que el botón se encoja */
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #00e5ff, #00bcd4); /* Invertir degradado al hover */
+            transform: translateY(-2px); /* Pequeño efecto de elevación */
+        }
+
+        button:active {
+            transform: translateY(0); /* Vuelve a la posición original al hacer click */
+        }
+
+        #error-message {
+            color: #ff6b6b; /* Rojo suave para errores */
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Icono de carga/spinner */
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-left-color: var(--accent-color);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: none; /* Oculto por defecto */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .chat-container {
+                height: 95vh;
+                margin: 20px auto;
+            }
+            .chat-input-area {
+                padding: 10px 15px;
+            }
+            textarea {
+                padding: 10px;
+            }
+            button {
+                padding: 10px 15px;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+        }
+        @media (max-width: 480px) {
+            .chat-container {
+                border-radius: 0;
+                height: 100vh;
+                margin: 0;
+            }
+            body {
+                align-items: stretch;
+            }
+            header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <header>
+            <img src="images/terra.jpg" alt="Logo Asistente">
+            <h1>Asistente de Terra</h1>
+        </header>
+
+        <div class="chat-history" id="chatHistory">
+            </div>
+
+        <div class="chat-input-area">
+            <textarea id="queryInput" placeholder="Envía un mensaje..." rows="1" oninput="autoResizeTextarea(this)"></textarea>
+            <button onclick="sendMessage()">Enviar</button>
+            <div class="spinner" id="loadingSpinner"></div>
+        </div>
+
+        <div id="error-message"></div>
+    </div>
+
+    <script>
+        const FLASK_API_URL = 'http://127.0.0.1:5000/ask_llm';
+        const chatHistory = document.getElementById('chatHistory');
+        const queryInput = document.getElementById('queryInput');
+        const sendButton = document.querySelector('.chat-input-area button');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const errorMessageDiv = document.getElementById('error-message');
+
+        // Función para auto-redimensionar el textarea
+        function autoResizeTextarea(textarea) {
+            textarea.style.height = 'auto';
+            textarea.style.height = textarea.scrollHeight + 'px';
+        }
+
+        // Función para añadir un mensaje al historial
+        function addMessage(sender, messageText, avatarSrc) {
+            const messageRow = document.createElement('div');
+            messageRow.classList.add('message-row', sender); // 'user' o 'assistant'
+
+            const avatar = document.createElement('img');
+            avatar.src = avatarSrc;
+            avatar.alt = sender + ' avatar';
+
+            const messageContent = document.createElement('div');
+            messageContent.classList.add('message-content');
+            
+            // Usar marked.parse para renderizar Markdown
+            messageContent.innerHTML = marked.parse(messageText);
+
+            if (sender === 'user') {
+                messageRow.appendChild(messageContent);
+                messageRow.appendChild(avatar);
+            } else { // 'assistant'
+                messageRow.appendChild(avatar);
+                messageRow.appendChild(messageContent);
+            }
+            
+            chatHistory.appendChild(messageRow);
+            chatHistory.scrollTop = chatHistory.scrollHeight; // Scroll al final
+        }
+
+        // Función principal para enviar mensajes
+        async function sendMessage() {
+            const queryText = queryInput.value.trim();
+            if (queryText === '') return;
+
+            errorMessageDiv.textContent = ''; // Limpiar errores previos
+
+            // Añadir mensaje del usuario
+            addMessage('user', queryText, 'images/avatar.png'); // Icono de usuario genérico
+
+            queryInput.value = ''; // Limpiar input
+            autoResizeTextarea(queryInput); // Resetear altura
+
+            sendButton.disabled = true; // Deshabilitar botón
+            loadingSpinner.style.display = 'block'; // Mostrar spinner
+
+            try {
+                const response = await fetch(FLASK_API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ query: queryText })
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(`Error ${response.status}: ${errorData.error || 'Algo salió mal en el servidor.'}`);
+                }
+
+                const data = await response.json();
+                
+                // Añadir mensaje del asistente
+                addMessage('assistant', data.response, 'images/terra.jpg'); // Icono de asistente genérico
+
+            } catch (error) {
+                console.error('Error al enviar la pregunta:', error);
+                errorMessageDiv.textContent = 'Error: ' + error.message + '. Asegúrate de que tu servidor Flask esté corriendo y CORS esté configurado.';
+                // Añadir un mensaje de error al chat si lo prefieres
+                addMessage('assistant', "Lo siento, hubo un error al obtener la respuesta: " + error.message, 'images/terra.jpg');
+            } finally {
+                sendButton.disabled = false; // Habilitar botón
+                loadingSpinner.style.display = 'none'; // Ocultar spinner
+                chatHistory.scrollTop = chatHistory.scrollHeight; // Asegurar scroll al final
+            }
+        }
+
+        // Permitir enviar mensaje con Enter, pero Shift + Enter para nueva línea
+        queryInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault(); // Previene la nueva línea por defecto
+                sendMessage();
+            }
+        });
+
+        // Mensaje de bienvenida inicial
+        window.onload = () => {
+            addMessage('assistant', "¡Hola! Soy el Asistente de Terra. ¿En qué puedo ayudarte hoy?", 'images/terra.jpg');
+        };
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+2.-PANTALLA HOME CLIENTE
+Estás en la pantalla principal de tu espacio como cliente en Terra Ripple. Desde aquí puedes ver y gestionar todas tus incidencias de forma clara y rápida.
+
+En la parte superior tienes tres botones fijos:
+• My project: Te lleva directamente al resumen de tu proyecto.
+• New issue: Para notificar una nueva solicitud o problema.
+• Menu: Muestra un menú lateral con más opciones:
+  o Profile: Edita tus datos personales.
+  o Record: Historial de incidencias.
+  o Contact: Información de contacto.
+  o Guide: Guía de uso de la plataforma.
+  o Terra HQ: Acceso a la página principal de Terra.
+  o Sign out: Cierra tu sesión.
+
+Debajo verás una lista cronológica de tus incidencias activas y pasadas, ordenadas desde la más reciente. Cada una aparece representada por un bloque de color con un título breve (como Copy revision, Design issue, etc.).
+
+Si haces clic en cualquiera de ellas, accederás a una página de detalle donde podrás ver toda la información relacionada con esa incidencia: qué se pidió, en qué estado está, cuándo se actualizó por última vez y si necesita tu aprobación.
+
+Desde esa vista de detalle podrás:
+• Aprobar la incidencia si ya está resuelta y todo está correcto.
+• Desaprobarla si hay algún problema, dejando un comentario con tus motivos. Esa información se enviará directamente al Project Manager de Terra para que puedan darte una respuesta.
+
+Y si tienes dudas en cualquier momento:
+• El botón verde, abajo a la derecha, abre la guía de uso.
+• El botón amarillo activa este chatbot para ayudarte directamente.

@@ -1,0 +1,274 @@
+Estos son los tipos de issues que podran elegir los clientes en nuestro desplegable.
+
+Tipos de incidencias:
+Revisión de contenido (Copy revision):
+ El cliente solicita modificar textos previamente entregados.
+Cambio solicitado previamente aprobado (Requested change):
+El cliente desea modificar un elemento (diseño, funcionalidad, etc.) que ya había aprobado en una etapa anterior del proyecto.
+Problemas de diseño (Design issues):
+ El cliente detecta fallos visuales, como elementos que no se adaptan correctamente en versión responsive o imágenes que no se visualizan adecuadamente.
+Solicitud de nuevo elemento (New item):
+El cliente pide agregar funcionalidades o páginas que no estaban contempladas en el alcance original del proyecto.
+Corrección de errores (Bug fix):
+El cliente reporta un error técnico, como problemas de navegación, errores de renderizado, formularios que no funcionan, entre otros.
+
+Aqui hay ejemplos practicos de issues comunes para cada tipo.
+Bug fix
+The filter tags on the blog shows incorrect content on reload.
+The FAQ accordion doesn't reset fields correctly.
+The mobile navigation menu fails on Firefox when ad blockers are active.
+The interactive chart in the insights section fails on Firefox when ad blockers are active.
+The video autoplay feature causes memory leak warnings.
+The language switcher generates console errors in Chrome DevTools.
+The cookie consent modal does not respect system dark mode.
+The embedded YouTube videos appears twice under certain conditions.
+The filter tags on the blog fails silently without user feedback.
+The mobile navigation menu loses focus after each keystroke.
+The image carousel arrows is causing performance lag on low-end devices.
+The embedded YouTube videos generates console errors in Chrome DevTools.
+The image carousel arrows collapses unexpectedly on scroll.
+The login form error handling does not respect system dark mode.
+The language switcher triggers a page reload without submission.
+The Google Maps embed displays wrong font fallback.
+The submit button on the contact form doesn't reset fields correctly.
+The mobile navigation menu stops functioning after the second interaction.
+The lazy loading for images does not respect system dark mode.
+The load animation on the homepage overlaps with content when resized.
+The scroll-to-top button does not retain state after refresh.
+The lazy loading for images appears twice under certain conditions.
+The newsletter popup form loses focus after each keystroke.
+The FAQ accordion shows incorrect content on reload.
+The cookie consent modal triggers a page reload without submission.
+The submit button on the contact form triggers multiple events at once.
+The cookie consent modal stops functioning after the second interaction.
+The load animation on the homepage fails silently without user feedback.
+The breadcrumbs on product pages does not retain state after refresh.
+The responsive layout of the pricing table displays wrong font fallback.
+The load animation on the homepage is blocked by certain firewalls.
+The load animation on the homepage causes layout shifts on load.
+The social media share icons overlaps with content when resized.
+The responsive layout of the pricing table breaks when switching languages.
+The dropdown menu in the navbar collapses unexpectedly on scroll.
+The FAQ accordion doesn't meet accessibility requirements.
+The download button for PDFs triggers multiple events at once.
+The responsive layout of the pricing table is blocked by certain firewalls.
+The lazy loading for images triggers multiple events at once.
+The page transition animations breaks when switching languages.
+The interactive chart in the insights section collapses unexpectedly on scroll.
+The search field behavior displays wrong font fallback.
+The external links in the footer is causing performance lag on low-end devices.
+The responsive layout of the pricing table generates console errors in Chrome DevTools.
+The newsletter popup form collapses unexpectedly on scroll.
+The search field behavior does not render properly in Safari.
+The interactive chart in the insights section causes layout shifts on load.
+The captcha validation fails to load behind VPNs.
+The Google Maps embed shows incorrect content on reload.
+The filter tags on the blog collapses unexpectedly on scroll.
+
+Copy issues
+Please emphasize benefits over features the Testimonials section intro — the current version feels too generic.
+Please optimize for SEO the homepage hero title — we want it to sound more personal and direct.
+Please refocus the message in the main navigation labels — consider phrasing that implies urgency.
+Please remove buzzwords from the CTA button label — we're pivoting tone to be more conversational.
+Please refocus the message in the CTA button label — let's remove the term 'innovative', it's overused.
+Please simplify the About section intro — use simpler language for broader understanding.
+Please optimize for SEO the tagline in the hero section — it currently duplicates info from another section.
+Please make more actionable the Services overview paragraph — mobile users are dropping off early on this section.
+Please rewrite for clarity the blog post summaries — the current version feels too generic.
+Please rewrite for clarity the homepage hero title — use simpler language for broader understanding.
+Please rewrite for clarity the footer legal copy — we want it to sound more personal and direct.
+Please make more actionable the blog post summaries — we're pivoting tone to be more conversational.
+Please revise the feature highlights under 'Why Choose Us' — the current version feels too generic.
+Please make more actionable the form confirmation message — it currently duplicates info from another section.
+Please emphasize benefits over features the ‘Contact Us’ headline — it should mention our core differentiator earlier.
+Please make more actionable the form confirmation message — the tone should feel more confident and less promotional.
+Please simplify the SEO meta description — we want it to sound more personal and direct.
+Please revise the About section intro — SEO team suggested including 'digital strategy'.
+Please simplify the Services overview paragraph — use simpler language for broader understanding.
+Please emphasize benefits over features the CTA button label — we're pivoting tone to be more conversational.
+Please enhance the engagement of the tagline in the hero section — current phrasing doesn't perform well in tests.
+Please refocus the message in the Careers page intro — let's test a variation with a stronger call-to-action.
+Please update to reflect our new tone the Services overview paragraph — use simpler language for broader understanding.
+Please highlight user value in the Testimonials section intro — the current version feels too generic.
+Please make shorter for mobile the form confirmation message — we're pivoting tone to be more conversational.
+Please simplify the homepage hero title — aim for clarity over cleverness.
+Please align better with our brand voice in the SEO meta description — we're pivoting tone to be more conversational.
+Please optimize for SEO the newsletter signup copy — the tone should feel more confident and less promotional.
+Please rewrite for clarity the Services overview paragraph — the tone should feel more confident and less promotional.
+Please simplify the Services overview paragraph — consider phrasing that implies urgency.
+Please change wording in the Services overview paragraph — aim for clarity over cleverness.
+Please refocus the message in the newsletter signup copy — consider phrasing that implies urgency.
+Please replace jargon in the SEO meta description — use simpler language for broader understanding.
+Please enhance the engagement of the Services overview paragraph — align this with what we say in the sales deck.
+Please rewrite for clarity the Careers page intro — we want it to sound more personal and direct.
+Please make more actionable the Services overview paragraph — current phrasing doesn't perform well in tests.
+Please replace jargon in the feature highlights under 'Why Choose Us' — we're pivoting tone to be more conversational.
+Please replace jargon in the newsletter signup copy — current phrasing doesn't perform well in tests.
+Please simplify the About section intro — current phrasing doesn't perform well in tests.
+Please update to reflect our new tone the Careers page intro — we want it to sound more personal and direct.
+Please rewrite for clarity the SEO meta description — we want it to sound more personal and direct.
+Please refocus the message in the SEO meta description — SEO team suggested including 'digital strategy'.
+Please align better with our brand voice in the CTA button label — mobile users are dropping off early on this section.
+Please make shorter for mobile the feature highlights under 'Why Choose Us' — let's remove the term 'innovative', it's overused.
+Please remove buzzwords from the tagline in the hero section — the tone should feel more confident and less promotional.
+Please optimize for SEO the blog post summaries — we're pivoting tone to be more conversational.
+Please align better with our brand voice in the feature highlights under 'Why Choose Us' — consider phrasing that implies urgency.
+Please update to reflect our new tone the CTA button label — let's remove the term 'innovative', it's overused.
+Please make shorter for mobile the newsletter signup copy — use simpler language for broader understanding.
+Please make shorter for mobile the homepage hero title — mobile users are dropping off early on this section.
+
+Design isuues
+The design consistency across subpages doesn’t feel premium enough for our brand.
+The padding on Services section lacks visual appeal.
+The headline alignment should use more consistent iconography.
+The icon usage in contact section [904] should be redesigned for better readability.
+The padding on Services section [204] lacks visual appeal.
+The visual hierarchy on homepage [233] doesn't align with our brand guidelines.
+The visual hierarchy on homepage [236] lacks visual appeal.
+The design of the call-to-action strip has poor contrast ratios.
+The dropdown appearance needs clearer visual structure.
+The form layout [113] makes the page feel too dense.
+The image usage on About page doesn’t feel premium enough for our brand.
+The color usage in the footer [730] leads to visual fatigue.
+The contrast levels in the hero section detracts from the core messaging.
+The presentation of numbers/statistics creates confusion for users.
+The design consistency across subpages leads to visual fatigue.
+The design of the call-to-action strip [516] feels disconnected from the rest of the site.
+The design of the call-to-action strip undermines trust due to visual inconsistency.
+The logo size makes the page feel too dense.
+The form layout detracts from the core messaging.
+The typographic treatment of headers fails to direct the user’s attention properly.
+The button hierarchy [151] makes the user journey feel fragmented.
+The accessibility of font choices doesn’t respect the established grid system.
+The logo size [65] fails to direct the user’s attention properly.
+The structure of the newsletter popup [504] fails to build enough trust.
+The spacing around section titles fails to build enough trust.
+The visual hierarchy on homepage looks outdated compared to competitors.
+The illustration on the homepage [598] detracts from the core messaging.
+The design of the loading animation [739] feels too heavy visually.
+The style of secondary buttons [544] needs more breathing room.
+The image usage on About page overemphasizes less important elements.
+The dropdown appearance doesn't reflect our updated brand values.
+The typography scale doesn’t pass accessibility color tests.
+The design of the call-to-action strip [531] feels generic and unmemorable.
+The style of secondary buttons lacks design harmony with the rest of the flow.
+The headline alignment [374] detracts from the core messaging.
+The image usage on About page [165] should use more consistent iconography.
+The design of the loading animation detracts from the core messaging.
+The visual hierarchy on homepage [248] fails to build enough trust.
+The icon usage in contact section [898] has poor contrast ratios.
+The presentation of numbers/statistics [800] needs more breathing room.
+The visual hierarchy on homepage [243] feels generic and unmemorable.
+The typography scale feels too heavy visually.
+The color usage in the footer [708] feels disconnected from the rest of the site.
+The design of the call-to-action strip [532] could benefit from a cleaner aesthetic.
+The contrast levels in the hero section [336] introduces unnecessary complexity.
+The icons in the Features section [430] needs clearer visual structure.
+The spacing around section titles has poor contrast ratios.
+The contrast levels in the hero section [342] detracts from the core messaging.
+The image usage on About page doesn’t respect the established grid system.
+The structure of content in modals feels generic and unmemorable.
+
+New item
+Please add a animated explainer about product flow, following competitor benchmarking.
+Please add a comparison table between product tiers, to support the new content strategy.
+Please add a client testimonial video module, for better mobile-first experience.
+Please add a client testimonial video module, as part of enterprise client requirements.
+Please add a animated brand story carousel, to address stakeholder concerns.
+Please add a AI-powered search functionality, to increase lead capture rate.
+Please add a FAQs segmented by user type, following competitor benchmarking.
+Please add a API documentation viewer, to streamline onboarding.
+Please add a timeline showcasing milestones, to address stakeholder concerns.
+Please add a page-level feedback option, to meet regulatory compliance.
+Please add a animated explainer about product flow, to align with product roadmap Q3.
+Please add a product selector quiz, to align with product roadmap Q3.
+Please add a case study filter by sector, to provide richer insights.
+Please add a timeline showcasing milestones, to meet regulatory compliance.
+Please add a new trust badge section, based on previous analytics review.
+Please add a FAQs segmented by user type, based on previous analytics review.
+Please add a animated explainer about product flow, to streamline onboarding.
+Please add a FAQs segmented by user type, for better mobile-first experience.
+Please add a custom form builder, as part of UX optimization phase.
+Please add a AI-powered search functionality, to support conversion goals.
+Please add a AI-powered search functionality, based on sales team input.
+Please add a customizable data visualization blocks, as part of SEO improvement strategy.
+Please add a GDPR compliance banner update, as part of the product relaunch.
+Please add a resource download center, based on previous analytics review.
+Please add a animated explainer about product flow, for improved feature discoverability.
+Please add a live metrics dashboard, to align with product roadmap Q3.
+Please add a integrated partner map, to support conversion goals.
+Please add a interactive onboarding walkthrough, to enhance engagement in key pages.
+Please add a AI-powered search functionality, as part of SEO improvement strategy.
+Please add a live metrics dashboard, to enhance engagement in key pages.
+Please add a integrated partner map, to align with product roadmap Q3.
+Please add a comparison table between product tiers, for better personalization.
+Please add a language preference selector, following competitor benchmarking.
+Please add a floating chat support widget, to enhance engagement in key pages.
+Please add a new trust badge section, to meet regulatory compliance.
+Please add a live metrics dashboard, for better personalization.
+Please add a FAQs segmented by user type, to streamline onboarding.
+Please add a timeline showcasing milestones, to increase lead capture rate.
+Please add a case study filter by sector, to address stakeholder concerns.
+Please add a GDPR compliance banner update, to enhance engagement in key pages.
+Please add a API documentation viewer, based on previous analytics review.
+Please add a dark mode toggle, to reflect our updated brand identity.
+Please add a animated brand story carousel, to align with product roadmap Q3.
+Please add a page-level feedback option, based on sales team input.
+Please add a animated explainer about product flow, for better mobile-first experience.
+Please add a live metrics dashboard, following competitor benchmarking.
+Please add a AI-powered search functionality, as part of enterprise client requirements.
+Please add a case study filter by sector, based on sales team input.
+Please add a pop-up alert for upcoming events, to align with product roadmap Q3.
+Please add a floating chat support widget, in response to user research.
+
+Request change
+We'd like to change the form input label positioning, even if the old version was signed off.
+We'd like to change the icons used in the value proposition list, to unify experience with the mobile app.
+We'd like to change the layout of the Services page, following feedback from the partner agency.
+We'd like to change the title of the Careers section, as it no longer matches our tone.
+We'd like to change the design of the newsletter popup, in light of the new campaign assets.
+We'd like to change the hover behavior of the CTA buttons, to unify experience with the mobile app.
+We'd like to change the animation on page scroll, to improve consistency with email templates.
+We'd like to change the structure of the Resources section, to reduce friction at key touchpoints.
+We'd like to change the form input label positioning, to reflect updated copy direction.
+We'd like to change the title of the Careers section, because the flow now feels disjointed.
+We'd like to change the structure of the Resources section, after reevaluating user flows.
+We'd like to change the visual order of callouts, even if the old version was signed off.
+We'd like to change the icons used in the value proposition list, because the flow now feels disjointed.
+We'd like to change the background image on the hero banner, since we've received new internal feedback.
+We'd like to change the layout of the Services page, to make it more intuitive for new users.
+We'd like to change the imagery used in the About Us section, in preparation for launch event.
+We'd like to change the animation speed on scroll, for alignment with latest design tokens.
+We'd like to change the label of the primary CTA, to accommodate new messaging.
+We'd like to change the hover color of service cards, because our marketing direction has shifted slightly.
+We'd like to change the visual arrangement of the contact form, due to user feedback we just received.
+We'd like to change the imagery used in the About Us section, after reevaluating user flows.
+We'd like to change the imagery used in the About Us section, following our recent strategy update.
+We'd like to change the sequence of steps in the signup flow, based on the latest wireframes.
+We'd like to change the structure of the Resources section, as requested by new leadership.
+We'd like to change the label of the primary CTA, even if it wasn't part of the original scope.
+We'd like to change the menu order on tablet, to reflect updated copy direction.
+We'd like to change the visual arrangement of the contact form, in preparation for launch event.
+We'd like to change the title of the Careers section, to unify experience with the mobile app.
+We'd like to change the testimonial image alignment, based on the latest wireframes.
+We'd like to change the positioning of the testimonial module, since we've received new internal feedback.
+We'd like to change the layout of the Services page, based on the latest wireframes.
+We'd like to change the testimonial image alignment, as we think it now fits better with our narrative.
+We'd like to change the visual order of callouts, following our recent strategy update.
+We'd like to change the positioning of the testimonial module, for alignment with latest design tokens.
+We'd like to change the animation speed on scroll, in preparation for launch event.
+We'd like to change the label of the primary CTA, following our recent strategy update.
+We'd like to change the alignment of content blocks, to accommodate new messaging.
+We'd like to change the form input label positioning, to unify experience with the mobile app.
+We'd like to change the sequence of steps in the signup flow, to improve visual storytelling.
+We'd like to change the CTA icon placement, based on updated performance data.
+We'd like to change the hover behavior of the CTA buttons, because the flow now feels disjointed.
+We'd like to change the mobile header layout, as we think it now fits better with our narrative.
+We'd like to change the visual arrangement of the contact form, because our marketing direction has shifted slightly.
+We'd like to change the mobile header layout, following feedback from the partner agency.
+We'd like to change the spacing within comparison tables, although we approved this layout before.
+We'd like to change the font used in the main navigation, after validating new layout in prototype testing.
+We'd like to change the order of the sections on the homepage, as discussed in the latest alignment call.
+We'd like to change the font used in the main navigation, to make it more intuitive for new users.
+We'd like to change the alignment of content blocks, in light of the new campaign assets.
+We'd like to change the icons used in the value proposition list, in preparation for launch event.

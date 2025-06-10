@@ -1,0 +1,20 @@
+4.- DETALLE DE INCIDENCIA
+Esta pantalla muestra toda la información relevante sobre una incidencia concreta. Aquí puedes revisar los datos registrados, el estado actual y comunicarte directamente con el Project Manager de Terra.
+
+A continuación te explico cada campo:
+
+• Título y descripción de la incidencia: Arriba del todo aparece un resumen con el tipo de incidencia y una breve descripción del problema.
+
+• Page: Es la URL donde se detectó la incidencia.
+
+• Browser y Device: Indican con qué navegador y en qué dispositivo se encontró el problema.
+
+• Issue number: Es el identificador único de esta incidencia.
+
+• Issue state: Muestra el estado actual de la incidencia (por ejemplo: en proceso, solucionado, pendiente, etc.).
+
+• Feedback: Aquí el Project Manager de Terra puede dejarte un comentario explicando lo que se ha hecho o el estado de la tarea.
+
+• Add comment: Este campo está habilitado para ti. Aquí puedes dejar tu valoración, tu confirmación si todo está correcto, o indicar si aún hay algo que no se ha resuelto. Es la forma directa de comunicarte con el equipo y cerrar o continuar el seguimiento de esta tarea.
+
+También puedes volver a otras secciones usando los botones de navegación habituales en la parte superior o consultar ayuda desde los iconos de la parte inferior derecha.

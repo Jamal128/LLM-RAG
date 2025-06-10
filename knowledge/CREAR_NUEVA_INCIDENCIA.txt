@@ -1,0 +1,22 @@
+3.- CREAR NUEVA INCIDENCIA
+Estás en la pantalla para crear una nueva incidencia en tu proyecto. Aquí puedes notificar cualquier error, sugerencia o cambio que necesites que el equipo de Terra revise.
+
+Te explico cómo rellenar cada parte del formulario:
+
+• Requested type: Aquí eliges el tipo de incidencia que vas a reportar (por ejemplo, de contenido, diseño, etc.). Una vez selecciones una opción, aparecerá un segundo desplegable con categorías más específicas. Ese valor nos servirá como subtítulo para ayudarte a identificar rápidamente esta incidencia más adelante.
+
+• Browser y Device: Indica con qué navegador (Chrome, Firefox, Safari...) y qué tipo de dispositivo (móvil, tablet, PC...) viste el problema.
+
+• Request: Explica aquí con tus palabras qué ocurre, qué necesitas o qué sugerencia tienes. Cuanto más claro, mejor.
+
+• Page: Escribe la URL o página concreta donde encontraste el problema.
+
+• Screenshot: Si tienes una captura o archivo que ayude a visualizar la incidencia, puedes subirlo aquí. Esto facilita mucho el trabajo al equipo de Terra.
+
+Abajo tienes dos botones:
+• Submit: Envíalo todo cuando termines.
+• + (más): Si necesitas reportar otra incidencia adicional sin salir de esta página, pulsa este botón y se abrirá un nuevo formulario limpio para que lo rellenes enseguida.
+
+Además:
+• Si haces clic en el logo de Terra Ripple, volverás a tu pantalla principal (la home del cliente).
+• A la derecha, el botón verde abre la guía, y el amarillo te permite hablar con este chatbot si necesitas ayuda.

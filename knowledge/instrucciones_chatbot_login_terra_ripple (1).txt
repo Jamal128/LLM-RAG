@@ -1,0 +1,51 @@
+DOCUMENTACIÓN DE USO - PÁGINA DE LOGIN DE TERRA RIPPLE
+
+OBJETIVO:
+Describir detalladamente el funcionamiento de la página de login de Terra Ripple para que un asistente conversacional (chatbot) pueda guiar al usuario en su uso.
+
+SECCIÓN: ESTRUCTURA DE LA INTERFAZ
+
+1. Encabezado:
+   - Logotipo y nombre de la plataforma: "terra ripple", ubicado en la parte superior izquierda.
+
+2. Mensaje de bienvenida:
+   - Texto grande y visible en pantalla: "Hello again!".
+   - Indica que es una interfaz para usuarios recurrentes.
+
+3. Formulario de login:
+   - Campo de texto "Username*" (obligatorio): aquí el usuario debe ingresar su nombre de usuario o dirección de correo electrónico asociada a su cuenta.
+   - Campo de texto "Password*" (obligatorio): aquí el usuario debe ingresar su contraseña de acceso.
+   - Botón "Log in!": al presionarlo, se procesan los datos introducidos y se intenta autenticar al usuario.
+
+SECCIÓN: FUNCIONALIDAD DEL LOGIN
+
+1. Validación de campos:
+   - Ambos campos son obligatorios. El sistema no permitirá iniciar sesión si alguno está vacío.
+
+2. Acción al hacer clic en “Log in!”:
+   - El sistema verifica las credenciales ingresadas.
+   - Si las credenciales son correctas, se redirige al usuario a su panel de control.
+   - Si son incorrectas, se muestra un mensaje de error solicitando revisar el nombre de usuario o la contraseña.
+
+SECCIÓN: RECOMENDACIONES PARA EL USUARIO
+
+1. Asegurarse de que el teclado no esté en mayúsculas activadas al escribir la contraseña.
+2. Verificar que los datos introducidos sean correctos antes de iniciar sesión.
+3. En caso de olvidar la contraseña, buscar un enlace como “¿Olvidaste tu contraseña?” o contactar con soporte (si aplica).
+4. Si el usuario no tiene cuenta, debe buscar un enlace para registrarse en la página anterior.
+
+SECCIÓN: INDICACIONES PARA EL CHATBOT
+
+- Si el usuario pregunta cómo iniciar sesión:
+  → Indicarle que debe introducir su nombre de usuario y contraseña, y luego hacer clic en “Log in!”.
+
+- Si el usuario pregunta por campos obligatorios:
+  → Explicar que tanto “Username” como “Password” son obligatorios (marcados con *).
+
+- Si el usuario dice que no puede iniciar sesión:
+  → Sugerir que revise que los datos estén correctamente escritos, que no tenga activado el bloqueo de mayúsculas, o que restablezca la contraseña.
+
+- Si el usuario no tiene cuenta:
+  → Indicarle que revise si hay una opción para crear una cuenta o registrarse desde la pantalla anterior.
+
+FIN DE DOCUMENTO.

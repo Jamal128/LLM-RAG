@@ -1,0 +1,323 @@
+Guía de Uso del CMS WordPress Headless + 
+Frontend Astro para Cliente: Cultura Nova
+ Índice
+ 1. Introducción 
+2. Acceso al CMS WordPress 
+3. Arquitectura del Proyecto (Headless + Astro) 
+4. Estructura de Contenidos 
+• Páginas estáticas 
+• Entradas de blog y noticias 
+• Secciones temáticas (teatro, cine, exposiciones, etc.) 
+• Eventos Janto 
+5. Creación y Edición de Contenidos 
+• Crear nueva entrada 
+• Editar contenido existente 
+• Relacionar contenidos entre secciones 
+6. Medios y Recursos Visuales 
+• Subir imágenes y vídeos 
+• Tamaños responsive según sección 
+• Asociar imágenes destacadas y carouseles 
+• Guía Rápida para Subir Imágenes 
+7. Integración con Janto (Venta de Entradas) 
+• Enlazar eventos desde WordPress 
+• Crear CTA y botones con enlaces externos 
+8. Buenas Prácticas de Actualización 
+9. Resolución de Problemas Comunes 
+• Cambios no visibles en el frontend 
+• Títulos y encabezados que no se reflejan 
+• Fallos en diseño responsive entre 922px y 767px 
+• Cómo Borrar la Caché del Navegador 
+• Cómo Usar el Inspector de Navegador para el Diseño Responsive 
+10.SEO para Proyectos Headless 
+• Campos meta en WordPress 
+• Estructura semántica desde el CMS 
+• Enlaces y relaciones internas 
+11.Buenas Prácticas de Contenido 
+12.Seguridad y Soporte 
+• ¿Cuándo Contactar con Soporte Técnico? 
+• ¿Cómo Contactar con Soporte Técnico? 
+13.Preguntas Frecuentes (FAQs) 
+14.Glosario de Términos Clave 
+1. Introducción
+ ¡Bienvenido/a al equipo de contenidos de Cultura Nova! Esta guía te ayudará a gestionar de forma 
+autónoma el contenido de tu web. Hemos construido el sitio con una arquitectura moderna: 
+WordPress como CMS "headless" (el "cerebro" donde guardas todo el contenido) y Astro como 
+frontend (la "cara" visible de tu web).
+ Esto significa que tú trabajarás exclusivamente en WordPress, creando y organizando tu contenido, 
+y Astro se encargará de presentarlo de forma rápida, segura y optimizada para todos tus usuarios. 
+Los contenidos se generan de forma estática, lo que nos da una velocidad y seguridad 
+excepcionales.
+ 2. Acceso al CMS WordPress
+ Para empezar a gestionar el contenido, sigue estos pasos:
+ 1. Abre tu navegador web y ve a: cms.culturanova.com/wp-admin 
+2. Introduce tu usuario y contraseña. Si no los tienes, contacta con tu responsable o con 
+soporte@culturanova.com. 
+3. Una vez dentro, desde el Escritorio de WordPress, podrás navegar a las secciones 
+principales para crear o editar contenido: "Entradas", "Páginas", "Eventos" o 
+"Secciones". 
+3. Arquitectura del Proyecto (Headless + Astro)
+ Es importante que entiendas cómo funciona tu web para saber por qué tus cambios no se ven al 
+instante:
+ • WordPress (Headless CMS): Es solo el gestor de contenidos. Guarda y organiza toda la 
+información (textos, imágenes, eventos) y la expone a través de una API. No construye las 
+páginas web que ves. 
+• Astro (Frontend Estático): Es la parte que construye y muestra tu sitio web. Cuando 
+publicas o actualizas algo en WordPress, Astro detecta ese cambio y regenera las páginas 
+web estáticas. 
+• El Proceso: Tú editas en WordPress -> WordPress notifica a Astro -> Astro reconstruye las 
+páginas -> Las nuevas páginas se despliegan en el servidor. 
+¿Qué implica esto para ti? Tus cambios no se verán reflejados al instante. Después de guardar o 
+publicar en WordPress, el proceso de regeneración y despliegue de Astro puede tardar entre 2 y 10 
+minutos. Ten paciencia y verifica el frontend después de este breve lapso.
+ 4. Estructura de Contenidos
+ Para mantener la web organizada y fácil de navegar, el contenido se estructura así:
+ • Páginas estáticas: Contenido que no cambia a menudo, como Inicio, Quiénes somos, 
+Contacto, Aviso Legal, Política de Privacidad. Se gestionan desde la sección "Páginas" 
+en WordPress. 
+• Entradas de blog y noticias: Contenido dinámico y actualizado regularmente, como 
+"Novedades en la programación" o "Últimas noticias de Cultura Nova". Se gestionan desde 
+la sección "Entradas" en WordPress. Aquí puedes asignarles categorías y etiquetas. 
+• Secciones temáticas: Contenido específico agrupado por disciplina artística o temática, 
+como Teatro, Cine, Danza, Infantil, Exposiciones, Música. Se gestionan mediante 
+categorías personalizadas o tipos de contenido personalizados en WordPress. 
+• Eventos Janto: La programación cultural principal. Estos eventos se importan desde Janto 
+o se enlazan directamente. Se gestionan desde la sección "Eventos" en WordPress. 
+5. Creación y Edición de Contenidos
+ WordPress usa el Editor de Bloques (Gutenberg), un sistema intuitivo para construir tus 
+contenidos.
+ Crear nueva entrada (o página)
+ 1. Desde el menú lateral, ve a Entradas > Añadir nueva (o Páginas > Añadir nueva). 
+2. Título: Escribe el título de tu entrada/página. Este será el H1 de tu contenido. 
+3. Editor de Bloques: Haz clic en el signo + (Añadir bloque) para insertar párrafos, 
+imágenes, encabezados (H2, H3, H4), listas, citas, etc. Usa la barra de herramientas del 
+bloque para aplicar formato (negrita, cursiva, enlaces). 
+4. Configuración de la entrada (Panel lateral derecho): 
+• Documento: Asegúrate de que el Estado y visibilidad sea Público. Selecciona 
+Categorías y Etiquetas (solo para Entradas). ¡Es crucial establecer la Imagen 
+destacada! Rellena un Extracto si lo deseas. 
+5. Cuando termines, haz clic en "Publicar" (o "Actualizar"). 
+Editar contenido existente
+ 1. Navega a Entradas, Páginas o Eventos. 
+2. Busca el contenido y haz clic en su título. 
+3. Realiza los cambios con el editor de bloques. 
+4. Haz clic en "Actualizar" para guardar. 
+Relacionar contenidos entre secciones
+ • Enlaces internos: Selecciona texto y haz clic en el icono de enlace para enlazar a otras 
+entradas, páginas o eventos. 
+• Campos personalizados: Para "Eventos" o "Secciones Temáticas", puede haber campos 
+específicos para enlazar contenido relacionado. Consulta con soporte. 
+• Bloques especiales: Pueden existir bloques personalizados para mostrar listas de contenido 
+relacionado automáticamente. 
+6. Medios y Recursos Visuales
+ Las imágenes y vídeos son clave. Una buena gestión mejora la velocidad de carga y el SEO.
+Subir imágenes y vídeos
+ 1. Al insertar un bloque de Imagen o Galería, elige "Subir" desde tu ordenador o 
+"Biblioteca de medios". 
+2. Recomendaciones: Usa formato WebP si es posible. Optimiza el tamaño del archivo antes 
+de subirlo. Nombra los archivos de forma descriptiva (ej: nombre-del-evento
+bilbao.webp). 
+Tamaños responsive según sección
+ Para que tus imágenes se vean bien en todos los dispositivos y carguen rápido, sigue estas guías:
+ • Header/Banner principal: 1920x800px. 
+• Cuadrículas / Listados / Entradas de Blog: 800x800px (cuadrada) o 1200x675px (16:9). 
+• Imágenes de Evento (ficha detallada): 1200x675px (16:9). 
+• Galerías dentro del contenido: No superar 1200px de ancho. 
+Asociar imágenes destacadas y carouseles
+ • Imagen Destacada: Fundamental para todas las entradas, páginas y eventos. En el panel 
+derecho de edición, busca "Imagen destacada" y súbela o selecciónala. 
+• Carouseles/Galerías: Si hay un carrousel, podría tener un bloque o campo personalizado. 
+Consulta con soporte si tienes dudas. 
+¡Muy importante! Siempre rellena el "Texto Alternativo" (ALT text) para todas las imágenes. 
+Esto ayuda a la accesibilidad y al SEO.
+ Guía Rápida para Subir Imágenes
+ 1. En el editor de bloques, añade un bloque de Imagen. 
+2. Haz clic en "Subir" para seleccionar una imagen desde tu ordenador o en "Biblioteca de 
+medios" para usar una ya existente. 
+3. Una vez subida/seleccionada, en el panel lateral derecho del bloque (o en los detalles de la 
+imagen en la Biblioteca de Medios), busca el campo "Texto Alternativo" (ALT text) y 
+rellénalo con una descripción breve y relevante de la imagen. Esto es crucial para la 
+accesibilidad y el SEO. 
+4. Asegúrate de que la imagen se vea bien en el editor y considera los tamaños recomendados 
+antes de subirla. 
+7. Integración con Janto (Venta de Entradas)
+ La integración con Janto es clave para la venta de entradas.
+ Enlazar eventos desde WordPress
+ Para cada Evento en WordPress, encontrarás un campo personalizado para el enlace a Janto:
+ 1. Ve a "Eventos" en WordPress y edita el evento. 
+2. Busca un campo como "Enlace a Janto" o "URL de compra de entradas". 
+3. Pega la URL completa y directa a la ficha del evento en Janto. 
+• ¡Validación!: Siempre verifica este enlace abriéndolo en una nueva pestaña. 
+Crear CTA y botones con enlaces externos
+ • Añade un bloque de "Botón" en el editor. 
+• Escribe el texto del botón (ej: "Comprar Entradas"). 
+• Pega la URL directa a Janto (o a otra web externa). 
+• No incrustar iFrames: Evita incrustar contenido de Janto con iFrames a menos que el 
+equipo técnico te lo indique y te proporcione el código. 
+8. Buenas Prácticas de Actualización
+ Para un sitio web óptimo, sigue estas recomendaciones:
+ • Revisa siempre antes de publicar: Ortografía, gramática, enlaces, imágenes, campos 
+obligatorios. 
+• Verifica en el frontend: Tras publicar, espera 5-10 minutos y comprueba que todo se ve 
+como esperas en culturanova.com. 
+• Actualizaciones programadas: Usa la opción "Publicar" en el panel "Estado y visibilidad" 
+para programar la publicación. 
+• Mantén tu navegador actualizado: Usa las últimas versiones de Chrome, Firefox, Edge o 
+Safari. 
+• Limpieza de la biblioteca de medios: Elimina archivos no utilizados para mantener el 
+orden. 
+9. Resolución de Problemas Comunes
+ Es normal encontrarse con pequeños inconvenientes. Así puedes abordarlos:
+ Cambios no visibles en el frontend
+ • ¿Has guardado y publicado? Asegúrate de que el botón dice "Actualizar" o "Publicado". 
+• ¿Has esperado lo suficiente? Recuerda los 2-10 minutos de regeneración. 
+• Borra la caché de tu navegador: Prueba a recargar con Ctrl + F5 (Windows) o Cmd +
+ R (Mac). Si no, borra la caché por completo. 
+• ¿Es un contenido programado? No se mostrará hasta la fecha indicada. 
+• Si nada funciona: Contacta con soporte@culturanova.com indicando la URL, cambios y 
+tiempo de espera. 
+Títulos y encabezados que no se reflejan
+ • El H1 es el título principal de WordPress. Si no se actualiza, es por la regeneración. 
+• Los Encabezados (H2, H3) dentro del contenido deben usar el bloque "Encabezado". Si no 
+se estilizan, podría ser un problema de regeneración. 
+• Casos especiales: Si un título que crees debería ser editable no se actualiza o no aparece, 
+contacta con soporte; podría estar definido por la plantilla de Astro. 
+Fallos en diseño responsive entre 922px y 767px
+ Esta franja puede ser crítica para la visualización.
+• Componente problemático: Los carouseles de eventos o imágenes suelen ser los más 
+sensibles. 
+• Sugerencia de contenido: En carouseles, usa textos concisos y evita saltos de línea 
+forzados. 
+• Cómo verificarlo: Usa las Herramientas de Desarrollador de tu navegador (clic derecho 
+> "Inspeccionar" > icono de móvil/tablet). Si ves un problema, haz una captura de 
+pantalla y contacta a soporte técnico. 
+Cómo Borrar la Caché del Navegador
+ Cuando hagas un cambio y no lo veas, una de las primeras cosas que puedes hacer es borrar la 
+caché de tu navegador.
+ • Chrome / Edge / Firefox (Windows): 
+1. Presiona Ctrl + F5 para una recarga forzada. 
+2. Si no funciona, presiona Ctrl + Shift + R. 
+3. Para borrar la caché completamente: Ctrl + Shift + Supr (o Ctrl + 
+Mayús + Supr). Selecciona "Imágenes y archivos en caché" y haz clic en "Borrar 
+datos". 
+• Chrome / Edge / Firefox (Mac): 
+1. Presiona Cmd + R para una recarga forzada. 
+2. Si no funciona, presiona Cmd + Shift + R. 
+3. Para borrar la caché completamente: Cmd + Shift + Supr (o Cmd + Mayús 
++ Supr). Selecciona "Imágenes y archivos en caché" y haz clic en "Borrar datos". 
+• Safari (Mac): 
+1. Ve a Safari > Vaciar caché (si no lo ves, activa el menú "Desarrollo" en 
+Safari > Preferencias > Avanzado). 
+2. También puedes ir a Safari > Borrar historial y seleccionar "todo el 
+historial". 
+Cómo Usar el Inspector de Navegador para el Diseño Responsive
+ Para verificar cómo se ve tu web en diferentes dispositivos:
+ 1. Abre la página web en tu navegador (culturanova.com). 
+2. Haz clic derecho en cualquier parte de la página y selecciona "Inspeccionar" (o 
+"Inspeccionar elemento"). 
+3. En la ventana de Herramientas de Desarrollador que aparece, busca el icono de "Toggle 
+device toolbar" (suele parecer un móvil y una tablet juntos, o un icono de pantalla). Haz 
+clic en él. 
+4. Ahora podrás ver la web en un simulador de diferentes tamaños de pantalla. Puedes 
+seleccionar dispositivos específicos o arrastrar los bordes para probar resoluciones como las 
+de 922px a 767px. 
+10. SEO para Proyectos Headless
+ El SEO es vital para que tu sitio sea visible en buscadores como Google. WordPress gestiona la 
+información SEO clave.
+ • Plugin Yoast SEO: En la parte inferior de cada entrada/página/evento, rellena: 
+• Meta Título: Título en pestañas y resultados de búsqueda. 
+• Meta Descripción: Resumen en resultados de búsqueda. 
+• Imagen para compartir: La imagen que se muestra al compartir en redes sociales. 
+• Estructura semántica desde el CMS: 
+• H1 (Único por página): El título principal de WordPress es tu H1. 
+• Jerarquía de encabezados (H2, H3, H4...): Usa los bloques de "Encabezado" de 
+forma lógica y no saltes niveles. 
+• Enlaces y relaciones internas: Crea una red de enlaces internos entre tus contenidos. Usa 
+texto ancla descriptivo. 
+• No repetir contenidos (Duplicate Content): Evita publicar el mismo contenido en 
+diferentes URLs. 
+11. Buenas Prácticas de Contenido
+ La calidad del contenido es tan importante como la tecnología.
+ • Redactar con lenguaje claro y conciso. 
+• Evitar copiar-pegar desde Word o PDF: Pega el texto primero en un editor de texto plano 
+para eliminar formato oculto. 
+• Comprobar enlaces rotos: Verifica que todos los enlaces funcionen antes de publicar. 
+• Revisar ortografía y gramática. 
+• Siempre revisar en responsive antes de publicar: Usa las herramientas de desarrollo para 
+asegurar una buena visualización en todos los dispositivos. 
+12. Seguridad y Soporte
+ Mantener la seguridad de tu CMS es una responsabilidad compartida.
+ • Cambiar contraseñas cada 3 meses: Usa contraseñas fuertes y únicas. 
+• No compartir usuarios y contraseñas: Cada miembro debe tener su propio acceso. 
+13. Preguntas Frecuentes (FAQs)
+ Aquí respondemos a las dudas más comunes sobre el mantenimiento de tu web:
+ • ¿Cuánto tiempo tarda en aparecer un cambio en la web después de que lo publico en 
+WordPress? 
+• Los cambios en WordPress no son instantáneos en la web pública. Después de 
+guardar o publicar, el frontend de Astro necesita regenerar el contenido, lo que puede
+ tardar entre 2 y 10 minutos. Ten paciencia y verifica la web después de este breve 
+lapso. 
+• He publicado un evento nuevo, pero no lo veo en la web, ¿qué hago? 
+• Primero, asegúrate de que has guardado y publicado el evento en WordPress. 
+Luego, espera unos minutos a que la web se regenere. Si sigue sin aparecer, prueba a
+ borrar la caché de tu navegador (Ctrl+F5 en Windows, Cmd+R en Mac). Si el 
+problema persiste, contacta con soporte técnico. 
+• ¿Cómo subo una imagen a mi web y qué tamaño debería tener? 
+• Para subir imágenes, ve a la Biblioteca de Medios de WordPress o usa el bloque de 
+Imagen en el editor. Haz clic en "Subir" o "Añadir nuevo". Es crucial rellenar 
+siempre el "Texto Alternativo". Respecto al tamaño, sugerimos 1920x800px para 
+banners principales, 800x800px o 1200x675px para cuadrículas y 1200x675px para 
+imágenes de evento. Recomendamos el formato WebP. 
+• ¿Dónde pongo el enlace para la venta de entradas de Janto? 
+• En la edición de cada Evento en WordPress, busca un campo personalizado 
+llamado "Enlace a Janto" o "URL de compra de entradas". Ahí es donde debes 
+pegar la URL completa y directa a la ficha del evento en la plataforma de Janto. 
+¡Verifica siempre que el enlace funcione! 
+• ¿Por qué mis títulos no se ven como quiero en la web? 
+• El título principal (H1) de tu página o entrada se define en el campo de "Título" de 
+WordPress. Otros encabezados (H2, H3, etc.) se gestionan con el bloque 
+"Encabezado". Si un título no se actualiza, podría ser un problema de regeneración 
+de la web. Si un título que crees que debería ser editable no se actualiza o no aparece,
+ contacta con soporte técnico, ya que podría estar definido por la plantilla de Astro. 
+• ¿Cómo puedo mejorar la aparición de mi contenido en Google? 
+• Utiliza el plugin Yoast SEO en WordPress. Rellena siempre el Meta Título, la Meta 
+Descripción y la Imagen para compartir. Además, usa los encabezados (H1, H2, 
+H3) de forma jerárquica y coherente, y crea enlaces internos entre tus contenidos 
+para ayudar a Google a entender y descubrir tu web. 
+• ¿Qué hago si la web se ve mal en mi móvil o tablet? 
+• Puedes usar las Herramientas de Desarrollador de tu navegador (clic derecho > 
+"Inspeccionar" > icono de móvil/tablet) para simular diferentes dispositivos. Si el 
+problema persiste, sobre todo en carouseles entre 922px y 767px, haz una captura 
+de pantalla y contacta con soporte técnico. 
+• ¿Es seguro copiar y pegar texto directamente desde Word o un PDF? 
+• No es recomendable. Al copiar y pegar directamente, se puede arrastrar formato 
+oculto que cause problemas de visualización. Es mejor pegar el texto primero en un 
+editor de texto plano (como el Bloc de Notas) para eliminar el formato, y luego 
+pegarlo en WordPress. 
+• ¿Dónde puedo encontrar mi usuario y contraseña para WordPress? 
+• Si no tienes tus credenciales, contacta con tu responsable o con el equipo de soporte
+ técnico. Recuerda cambiarlas cada tres meses por seguridad. 
+14. Glosario de Términos Clave
+ Para que la guía sea accesible a todos los niveles, un breve glosario de términos técnicos puede ser 
+muy útil.
+ • CMS Headless: Un sistema de gestión de contenidos (CMS) como WordPress, que solo se 
+encarga de almacenar y organizar la información, pero no de la presentación visual de la 
+web. 
+• Frontend Astro: La "cara" visible de tu web. En este proyecto, Astro es la tecnología que 
+toma el contenido de WordPress y genera las páginas web rápidas y seguras que ven los 
+usuarios. 
+• API REST/GraphQL: Son las "interfaces" que permiten a WordPress y Astro "hablar" 
+entre sí. A través de ellas, Astro solicita el contenido que tú creas en WordPress. 
+• WebP: Un formato de imagen moderno que permite que las fotos de tu web carguen más 
+rápido con la misma calidad, mejorando la experiencia del usuario y el SEO. 
+• Texto Alternativo (ALT text): Una descripción escrita de una imagen. Es fundamental para 
+la accesibilidad (lectores de pantalla para personas con discapacidad visual) y para que los 
+buscadores entiendan el contenido de tus imágenes (SEO). 
+• Gutenberg (Editor de Bloques): El editor visual de WordPress. Te permite construir tus 
+contenidos usando "bloques" predefinidos para textos, imágenes, galerías, etc. 
+• Caché del Navegador: Una memoria temporal de tu navegador que guarda copias de las 
+páginas web que visitas para cargarlas más rápido. A veces, necesita ser borrada para ver los 
+cambios más recientes de una web. 
+• SEO (Search Engine Optimization): Conjunto de técnicas para mejorar la visibilidad de tu 
+web en los resultados orgánicos (no pagados) de los motores de búsqueda como Google. 
+• Yoast SEO: Un plugin de WordPress que te ayuda a optimizar tus contenidos para los 
+motores de búsqueda, permitiéndote rellenar meta títulos, descripciones, etc. 
